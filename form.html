@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css"> 
+</head>
+<body>
+    <div class="a">
+        <div class="c">Book a call</div>
+        <div class="d">Book a call slot our representative with call you within 1hr of selected time</div>
+        
+        <div class="line"> </div>
+    <form action="#" >
+        <div class="b">
+            <label for="username">Name</label>
+            <input type="text" id="username" name="username">
+        
+            <label for="email">Email</label>
+            <input type="email" id="email">
+        
+            <label for="phone">Phone</label>
+            <input type="text" id="phone">
+        
+            <label for="date">Time for Call:</label>
+            <input type="date" id="date" name="date" placeholder="22/06/2002">
+            <input type="time" id="time" name="time">
+            <input type="button" onclick="logValue()" value="GET A CALL" style="color: rgb(254, 254, 254); background-color: orange;">
+          </div>
+    </form>
+    <script>
+       function logValue() {
+        var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+
+  console.log("Name: " + username);
+  console.log("Email: " + email);
+  console.log("Phone: " + phone);
+  console.log("Date: " + date);
+  console.log("Time: " + time);
+
+  localStorage.setItem('name',username)
+  localStorage.setItem('email',email)
+  localStorage.setItem('phone',phone)
+  localStorage.setItem('date',date)
+  localStorage.setItem('time',time)
+  
+}
+
+
+// sessionStorage.setItem('name','bob')
+// console.log(sessionStorage.getItem('name'));
+
+// document.cookie = 'name=Kyle expires='+ new Date(2020,0,1).toUTCString()
+    </script>
+</div>
+</body>
+</html>

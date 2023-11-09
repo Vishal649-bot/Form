@@ -1,0 +1,35 @@
+div.a{
+    border: 2px solid orange; /* 2px solid black border */
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin-left: 160px;
+  }
+div.b{
+  display: flex;
+    flex-direction: column; 
+}
+div.c{
+  color: orange;
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+  font-size: 30px;
+}
+div.d{
+display: flex;
+justify-content: center;
+margin: 15px;
+
+
+}
+.line {
+  border-top: 1px solid #000; /* 1-pixel solid black line */
+  position: absolute;
+  top: 34%; /* Position the line in the vertical center */
+  left: 18px;
+  right: 18px;
+  transform: translateY(-50%);
+}

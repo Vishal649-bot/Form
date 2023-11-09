@@ -43,12 +43,25 @@
   console.log("Date: " + date);
   console.log("Time: " + time);
 
-  localStorage.setItem('name',username)
-  localStorage.setItem('email',email)
-  localStorage.setItem('phone',phone)
-  localStorage.setItem('date',date)
-  localStorage.setItem('time',time)
-  
+//   localStorage.setItem('name',username)
+//   localStorage.setItem('email',email)
+//   localStorage.setItem('phone',phone)
+//   localStorage.setItem('date',date)
+//   localStorage.setItem('time',time)
+
+  let myobj = {
+    name : username,
+    email : email,
+    phone : phone,
+    date : date,
+    time : time
+  }
+  let myObj_serilizes = JSON.stringify(myobj)
+
+  localStorage.setItem('myObj',myObj_serilizes)
+
+  let myObj_deserialzed = JSON.parse(localStorage.getItem('myObj'))
+  console.log(myObj_deserialzed);
 }
 
 

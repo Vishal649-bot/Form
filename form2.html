@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="saveToLocalStorage(event)">
+        <label>Name</label>
+        <input type="text" name="username" >
+        <label>EmailId</label>
+        <input type="email" name="emailId" id="">
+        <label>Phone Number</label>
+        <input type="text" name="phoneNumber">
+        <button>submit</button>
+    </form>
+    <ul id="list"></ul>
+    <button onclick="delet()">delete</button>
+    <script>
+        function saveToLocalStorage(event){
+            event.preventDefault()
+            const name = event.target.username.value;
+            const email = event.target.emailId.value;
+            const phoneNumber = event.target.phoneNumber.value;
+            
+            const obj = {
+                name: name,
+                email: email,
+                phoneNumber:phoneNumber
+            }
+            localStorage.setItem(obj.email, JSON.stringify(obj))
+            showonScreen(obj)
+        }
+        function showonScreen(obj){
+            let ele = document.getElementById('list')
+            // console.log(ele.value);
+            ele.innerHTML =  ele.innerHTML+`<div  id=${obj.phoneNumber}> <li>${obj.name}-${obj.email}-${obj.phoneNumber}</li>     <button onclick="delet(${obj.phoneNumber})">delete</button></div
+                >` 
+        }
+        function delet(listId) {
+            let ele = document.getElementById(listId)
+            ele.innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>
